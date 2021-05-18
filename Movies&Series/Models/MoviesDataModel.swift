@@ -8,7 +8,7 @@
 import Foundation
 
 struct MoviesDataModel: Codable {
-    let results: [Movies]
+    let filmler: [Movies]
 }
 
 struct Movies: Codable {

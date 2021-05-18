@@ -22,7 +22,7 @@ class MoviesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MoviesCell", bundle: nil), forCellReuseIdentifier: "moviescell")
-        fetchData()
+     
      
     }
     
