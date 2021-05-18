@@ -51,37 +51,7 @@ class MoviesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     
-    func fetchData() {
-
-                URLSession.shared.dataTask(with: URL(string: "https://api.themoviedb.org/3/movie/550?api_key=90902ac3c64dc9e1f3647be926a89054")!,
-                                       completionHandler: { data, response, error in
-                                        
-                                        guard let data = data, error == nil else {
-                                            return
-                                        }
-                                        // Convert
-                                        var result: MoviesDataModel?
-                                        do {
-                                            result = try JSONDecoder().decode(MoviesDataModel.self, from: data)
-                                        }
-                                        catch {
-                                            print("error")
-                                        }
-                                        
-                                        guard let finalResult = result else {
-                                            return
-                                        }
-                                        // Update our movies array
-                                        let newMovies = finalResult.results
-                                        self.movies.append(contentsOf: newMovies)
-                                        
-                                        // Refresh our table
-                                        DispatchQueue.main.async {
-                                            self.tableView.reloadData()
-                                        }
-                                        
-                                       }).resume()
-            }
+    
         
 
 
