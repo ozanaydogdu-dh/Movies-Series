@@ -40,9 +40,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="01.01.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSd-BM-cIO">
-                        <rect key="frame" x="195" y="131" width="83.5" height="21"/>
+                        <rect key="frame" x="195" y="131" width="58" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -84,7 +84,7 @@
                 <outlet property="ratingLabel" destination="ag0-vC-loa" id="Pfk-AT-6x2"/>
                 <outlet property="releaseDateLabel" destination="cSd-BM-cIO" id="RZk-KC-v1O"/>
             </connections>
-            <point key="canvasLocation" x="177.536231884058" y="187.5"/>
+            <point key="canvasLocation" x="-351" y="188"/>
         </tableViewCell>
     </objects>
     <resources>

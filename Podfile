@@ -6,6 +6,7 @@ target 'Movies&Series' do
   use_frameworks!
 
   # Pods for Movies&Series
-pod 'Alamofire'
+ pod 'Alamofire'
+ pod 'Kingfisher', '~> 6.0'
 
 end
