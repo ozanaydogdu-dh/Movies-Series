@@ -7,12 +7,8 @@
 
 import UIKit
 
-class SeriesVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    
-    
-    
-    
-    
+class SeriesVC: UIViewController {
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     var series = [ResultSeries]()
@@ -26,26 +22,37 @@ class SeriesVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 2
+        
         collectionView.setCollectionViewLayout(layout, animated: true)
+        getSeries()
         
+   }
+
+
+    func getSeries(){
         
+        let url = URL(string:"https://api.themoviedb.org/3/tv/popular?api_key=90902ac3c64dc9e1f3647be926a89054")!
         
-        
-        
-        let urlSeries = URL(string: "https://api.themoviedb.org/3/tv/popular?api_key=90902ac3c64dc9e1f3647be926a89054")!
-        
-        Service().downloadSeries(url: urlSeries) { (diziListesi) in
+        Service().downloadSeries(url: url) { (diziListesi) in
             if let diziListesi = diziListesi{
                 self.series = diziListesi.results
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
-                    
                 }
             }
         }
     }
+    
+    
+}
+
+
+
+extension SeriesVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    
+ 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return series.count
     }
@@ -53,27 +60,11 @@ class SeriesVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "seriesCell", for: indexPath) as! SeriesCell
-        cell.seriesNameLabel.text = series[indexPath.row].name
-        cell.ratingLabel.text = String(series[indexPath.row].voteAverage)
-        
-        
-        
-        let urlstr = "https://image.tmdb.org/t/p/w500" + (series[indexPath.row].posterPath ?? "")
-        cell.seriesImage.kf.setImage(with:URL(string: urlstr))
-        
-        
-        
+        cell.customizeSeries(with: series[indexPath.row])
         
         return cell
-        
-        
-        
     }
-    
-    
-    
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)
     }
@@ -84,19 +75,22 @@ class SeriesVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         return CGSize(width:widthPerItem, height:300)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "toDetailSeriesVC", sender: nil)
+       
+        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = Storyboard.instantiateViewController(identifier: "DetailsVC") as! DetailsVC
+        
+        destinationVC.series = series[indexPath.row]
+//        destinationVC.getName = series[indexPath.row].name
+//        destinationVC.getRating = Double(series[indexPath.row].voteAverage)
+//        destinationVC.getDate = series[indexPath.row].firstAirDate
+//        destinationVC.getImage = String(series[indexPath.row].posterPath)
+//        destinationVC.getSummary = series[indexPath.row].overview
+//        var genreListe = ""
+       
+   
+        self.navigationController?.pushViewController(destinationVC, animated: true)
     }
     
-    
-   
-    
-    
-    
-    
-    
-    
 }
-
-
 
 

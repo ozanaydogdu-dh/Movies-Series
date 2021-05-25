@@ -8,12 +8,10 @@
 import Foundation
 import Alamofire
 
-
 class Service  {
     
     
     func downloadMovie(url : URL, completion: @escaping (MoviesDataModel?) -> () ) {
-        
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -29,19 +27,12 @@ class Service  {
                     print(err)
                     
                 }
-                
-                
-                
+    
             }
         }.resume()
-        
-        
-        
+  
     }
-    
-    
-    
-    
+
     func downloadSeries(url : URL, completion: @escaping (SeriesDataModel?) -> () ) {
         
         
@@ -58,6 +49,29 @@ class Service  {
                     completion(seriesList)
                 } catch let err {
                     print(err)
+                }
+            }
+        }.resume()
+
+        
+    }
+    
+    
+    
+    func downloadGenre(url : URL, completion: @escaping (GenreMoviesModel?) -> () ) {
+         
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                
+                print(error.localizedDescription)
+                completion(nil)
+            }else if let data = data{
+                
+                do {
+                    let genreList = try JSONDecoder().decode(GenreMoviesModel.self, from:data)
+                    completion(genreList)
+                } catch let err {
+                    print(err)
                     
                 }
                 
@@ -65,19 +79,6 @@ class Service  {
                 
             }
         }.resume()
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    }
     
-    
+}
 }

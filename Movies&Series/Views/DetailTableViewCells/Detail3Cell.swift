@@ -1,5 +1,5 @@
 //
-//  DetailsTableViewCell.swift
+//  Detail3Cell.swift
 //  Movies&Series
 //
 //  Created by ozan aydogdu on 21.05.2021.
@@ -7,9 +7,10 @@
 
 import UIKit
 
-class DetailsTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var detailImageView: UIImageView!
+class Detail3Cell: UITableViewCell {
+
+    @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
