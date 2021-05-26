@@ -17,30 +17,32 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eso-nY-9ob">
-                        <rect key="frame" x="8" y="76" width="394" height="186"/>
+                        <rect key="frame" x="10" y="76" width="390" height="186"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="390" id="eZK-Qu-k1x"/>
+                        </constraints>
                         <string key="text">Yaptığı filmler ana akıma girmeyen fakat bağımsız olarak da nitelemenin pek mümkün olmadığı Gregg Araki’nin son filmi Karda Beyaz Bir Kuş-White Bird in a Blizza..</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTY-R4-Xoa">
-                        <rect key="frame" x="4" y="8" width="402" height="60"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTY-R4-Xoa">
+                        <rect key="frame" x="10" y="8" width="390" height="60"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="9D8-Xd-zHM"/>
-                            <constraint firstAttribute="width" constant="402" id="daC-f6-9DP"/>
+                            <constraint firstAttribute="width" constant="390" id="bBO-vG-doT"/>
+                            <constraint firstAttribute="height" constant="60" id="uc6-Pf-pTI"/>
                         </constraints>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="eso-nY-9ob" secondAttribute="trailing" constant="8" id="KEb-ow-ruJ"/>
-                    <constraint firstItem="eso-nY-9ob" firstAttribute="top" secondItem="GTY-R4-Xoa" secondAttribute="bottom" constant="8" id="Wwh-O0-biq"/>
-                    <constraint firstItem="eso-nY-9ob" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="YGI-Ys-LOs"/>
-                    <constraint firstAttribute="trailing" secondItem="GTY-R4-Xoa" secondAttribute="trailing" constant="4" id="caT-mf-7TQ"/>
-                    <constraint firstAttribute="bottom" secondItem="eso-nY-9ob" secondAttribute="bottom" constant="8" id="f1a-C8-ArF"/>
-                    <constraint firstItem="GTY-R4-Xoa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="gdz-Bo-xNW"/>
-                    <constraint firstItem="GTY-R4-Xoa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="ghk-L3-SS3"/>
+                    <constraint firstItem="eso-nY-9ob" firstAttribute="top" secondItem="GTY-R4-Xoa" secondAttribute="bottom" constant="8" id="0WL-aF-3h3"/>
+                    <constraint firstItem="GTY-R4-Xoa" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="PUd-EG-AfA"/>
+                    <constraint firstItem="eso-nY-9ob" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="YnO-Do-8yS"/>
+                    <constraint firstAttribute="bottom" secondItem="eso-nY-9ob" secondAttribute="bottom" constant="8" id="dEd-n6-ZqS"/>
+                    <constraint firstAttribute="trailing" secondItem="eso-nY-9ob" secondAttribute="trailing" constant="10" id="mzc-Iy-hvM"/>
+                    <constraint firstItem="GTY-R4-Xoa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="oho-OV-6rp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -10,7 +10,6 @@ import UIKit
 class SeriesVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
     var series = [ResultSeries]()
     
     override func viewDidLoad() {
@@ -27,9 +26,7 @@ class SeriesVC: UIViewController {
         
         collectionView.setCollectionViewLayout(layout, animated: true)
         getSeries()
-        
    }
-
 
     func getSeries(){
         
@@ -44,15 +41,9 @@ class SeriesVC: UIViewController {
             }
         }
     }
-    
-    
 }
-
-
-
 extension SeriesVC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
- 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return series.count
     }
@@ -61,7 +52,7 @@ extension SeriesVC : UICollectionViewDelegate, UICollectionViewDataSource,UIColl
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "seriesCell", for: indexPath) as! SeriesCell
         cell.customizeSeries(with: series[indexPath.row])
-        
+    
         return cell
     }
 
@@ -78,19 +69,8 @@ extension SeriesVC : UICollectionViewDelegate, UICollectionViewDataSource,UIColl
        
         let Storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destinationVC = Storyboard.instantiateViewController(identifier: "DetailsVC") as! DetailsVC
-        
         destinationVC.series = series[indexPath.row]
-//        destinationVC.getName = series[indexPath.row].name
-//        destinationVC.getRating = Double(series[indexPath.row].voteAverage)
-//        destinationVC.getDate = series[indexPath.row].firstAirDate
-//        destinationVC.getImage = String(series[indexPath.row].posterPath)
-//        destinationVC.getSummary = series[indexPath.row].overview
-//        var genreListe = ""
-       
-   
         self.navigationController?.pushViewController(destinationVC, animated: true)
     }
     
 }
-
-

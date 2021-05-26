@@ -5,7 +5,7 @@
 //  Created by ozan aydogdu on 11.05.2021.
 //
 
-import UIKit 
+import UIKit
 import Kingfisher
 
 class MoviesVC: UIViewController {
@@ -37,7 +37,6 @@ class MoviesVC: UIViewController {
         }
     }
     
-    
     func getGenre(){
         
         let url = URL(string:"https://api.themoviedb.org/3/genre/movie/list?api_key=90902ac3c64dc9e1f3647be926a89054")!
@@ -51,52 +50,45 @@ class MoviesVC: UIViewController {
                 }
             }
         }
-        
     }
-  
 }
 extension MoviesVC:UITableViewDelegate, UITableViewDataSource{
-
-func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 200
-}
-
-
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return movies.count
-}
-
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = Bundle.main.loadNibNamed("MoviesCell", owner: self, options: nil)?.first as! MoviesCell
-      var genreListe = ""
-     
-    for id in movies[indexPath.row].genreIDS!{
-        genreListe.append("\(genre.first(where: {$0.id == id})!.name), ")}
-
-      cell.genreLabel.text = genreListe
-      cell.customize(with: movies[indexPath.row])
     
-    return cell
-}
-
-func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
     
-    let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let destinationVC = Storyboard.instantiateViewController(identifier: "DetailsVC") as! DetailsVC
-
-    destinationVC.movie = movies[indexPath.row]
-//    destinationVC.getName = movies[indexPath.row].title ?? ""
-//    destinationVC.getRating = Double(movies[indexPath.row].voteAverage!)
-//    destinationVC.getDate = movies[indexPath.row].releaseDate ?? ""
-//    destinationVC.getImage = String(movies[indexPath.row].posterPath ?? "")
-//    destinationVC.getSummary = movies[indexPath.row].overview ?? ""
-    var genreListe = ""
-   
-  for id in movies[indexPath.row].genreIDS!{
-      genreListe.append("\(genre.first(where: {$0.id == id})!.name), ")}
-    destinationVC.getGenreListe = genreListe
-    self.navigationController?.pushViewController(destinationVC, animated: true)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return movies.count
+    }
     
-}
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Bundle.main.loadNibNamed("MoviesCell", owner: self, options: nil)?.first as! MoviesCell
+        var genreListe = ""
+        
+        for id in movies[indexPath.row].genreIDS!{
+            genreListe.append("\(genre.first(where: {$0.id == id})!.name), ")
+            
+        }
+        genreListe.removeLast(2)
+        cell.genreLabel.text = genreListe
+        cell.customize(with: movies[indexPath.row])
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = Storyboard.instantiateViewController(identifier: "DetailsVC") as! DetailsVC
+        
+        destinationVC.movie = movies[indexPath.row]
+        
+        var genreListe = ""
+        
+        for id in movies[indexPath.row].genreIDS!{
+            genreListe.append("\(genre.first(where: {$0.id == id})!.name), ")}
+        genreListe.removeLast(2)
+        destinationVC.getGenreListe = genreListe
+        self.navigationController?.pushViewController(destinationVC, animated: true)
+    }
 }

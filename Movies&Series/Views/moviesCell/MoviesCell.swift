@@ -23,12 +23,11 @@ class MoviesCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        movieImage.layer.cornerRadius = 15
+        movieImage.layer.cornerRadius = 25
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
     func customize(with item: Result){
@@ -36,16 +35,10 @@ class MoviesCell: UITableViewCell {
         self.movieNameLabel.text = item.title
         self.releaseDateLabel.text = item.releaseDate
         self.ratingLabel.text = String(item.voteAverage!)
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = 25
         let urlstr = "https://image.tmdb.org/t/p/w500" + (item.posterPath ?? "")
         self.movieImage.kf.setImage(with:URL(string: urlstr))
         
-        //        var genreListe = ""
-        //
-        //        for id in item.genreIDS!{
-        //
-        //          genreListe.append("\(genre.first(where: {$0.id == id})!.name), ")}
-        //        self.genreLabel.text = genreListe
     }
 }
 

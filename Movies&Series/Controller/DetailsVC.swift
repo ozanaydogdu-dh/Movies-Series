@@ -11,8 +11,7 @@ import Kingfisher
 class DetailsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    
+
     var getName = ""
     var getRating = 0.0
     var getImage = ""
@@ -26,9 +25,7 @@ class DetailsVC: UIViewController {
             self.getImage = movie.posterPath ?? ""
             self.getDate = movie.releaseDate ?? ""
             self.getSummary = movie.overview ?? ""
-            
         }
-        
     }
     var series : ResultSeries!{
         didSet{
@@ -37,12 +34,9 @@ class DetailsVC: UIViewController {
             self.getImage = series.posterPath
             self.getDate = series.firstAirDate
             self.getSummary = series.overview
-            
         }
-        
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,7 +53,6 @@ extension DetailsVC: UITableViewDataSource, UITableViewDelegate {
         return 3
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         if indexPath.row > 1 {
@@ -70,24 +63,15 @@ extension DetailsVC: UITableViewDataSource, UITableViewDelegate {
     if indexPath.row > 0 {
         
        let cell2 = Bundle.main.loadNibNamed("Details2Cell", owner: self, options: nil)?.first as! Details2Cell
-    
         cell2.nameLabel.text = getName
         cell2.ratingLabel.text = String(getRating)
         cell2.dateLbl.text = getDate
         cell2.genreLabel.text = getGenreListe
-    
         return cell2
     }
-   
         let cell = Bundle.main.loadNibNamed("DetailsTableViewCell", owner: self, options: nil)?.first as! DetailsTableViewCell
-        
         let urlstr = "https://image.tmdb.org/t/p/w500\(getImage)"
         cell.detailImageView.kf.setImage(with:URL(string: urlstr))
     return cell
-        
     }
-    
-  
-    
-    
 }

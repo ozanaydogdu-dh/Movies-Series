@@ -16,12 +16,12 @@ class SeriesCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-       seriesImage.layer.cornerRadius = 15
+       seriesImage.layer.cornerRadius = 25
       
     }
     
     func customizeSeries(with itemSeries:ResultSeries){
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = 25
         self.seriesNameLabel.text = itemSeries.name
         self.ratingLabel.text = String(itemSeries.voteAverage)
         let urlstr = "https://image.tmdb.org/t/p/w500" + (itemSeries.posterPath )

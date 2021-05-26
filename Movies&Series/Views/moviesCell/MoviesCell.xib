@@ -24,49 +24,46 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detective Pikachu" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufs-1A-hQM">
-                        <rect key="frame" x="156" y="16" width="241" height="23.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                        <rect key="frame" x="156" y="16" width="241" height="24"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01.01.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSd-BM-cIO">
-                        <rect key="frame" x="156" y="134" width="83.5" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="01.01.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSd-BM-cIO">
+                        <rect key="frame" x="156" y="134" width="100" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Quw-eT-1Y0">
-                        <rect key="frame" x="283" y="105" width="100" height="50"/>
+                        <rect key="frame" x="289" y="139" width="100" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ag0-vC-loa">
-                                <rect key="frame" x="55" y="5" width="40" height="40"/>
+                                <rect key="frame" x="52.5" y="5" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="95K-P5-4bx"/>
-                                    <constraint firstAttribute="width" constant="40" id="G3Z-dO-y2B"/>
-                                    <constraint firstAttribute="height" constant="40" id="TeJ-ye-D1c"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="dbS-Cv-xlm"/>
+                                    <constraint firstAttribute="width" constant="40" id="IUS-tQ-AOe"/>
+                                    <constraint firstAttribute="height" constant="40" id="pqh-DD-XqA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lEU-Rk-bxn">
-                                <rect key="frame" x="5" y="4.5" width="40" height="40"/>
+                                <rect key="frame" x="7.5" y="4.5" width="40" height="40"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="5xN-BB-1QR"/>
-                                    <constraint firstAttribute="height" constant="40" id="6AB-ZX-aPO"/>
-                                    <constraint firstAttribute="width" constant="40" id="Q2B-0f-IMd"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="zhR-td-FeW"/>
+                                    <constraint firstAttribute="height" constant="40" id="ios-jL-Xni"/>
+                                    <constraint firstAttribute="width" constant="40" id="rTl-Tp-SxS"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ag0-vC-loa" secondAttribute="bottom" constant="5" id="E0W-Cs-QUt"/>
-                            <constraint firstItem="lEU-Rk-bxn" firstAttribute="leading" secondItem="Quw-eT-1Y0" secondAttribute="leading" constant="5" id="LOa-fh-6UU"/>
-                            <constraint firstAttribute="trailing" secondItem="ag0-vC-loa" secondAttribute="trailing" constant="5" id="NqE-Vy-S1h"/>
-                            <constraint firstItem="ag0-vC-loa" firstAttribute="leading" secondItem="lEU-Rk-bxn" secondAttribute="trailing" constant="10" id="Sml-2e-YJP"/>
-                            <constraint firstAttribute="bottom" secondItem="lEU-Rk-bxn" secondAttribute="bottom" constant="5" id="ZKq-Aa-f07"/>
-                            <constraint firstItem="lEU-Rk-bxn" firstAttribute="top" secondItem="Quw-eT-1Y0" secondAttribute="top" constant="5" id="ZhI-cw-CM6"/>
-                            <constraint firstItem="ag0-vC-loa" firstAttribute="top" secondItem="Quw-eT-1Y0" secondAttribute="top" constant="5" id="nOS-If-dev"/>
+                            <constraint firstItem="ag0-vC-loa" firstAttribute="leading" secondItem="lEU-Rk-bxn" secondAttribute="trailing" constant="5" id="7kO-a7-8VY"/>
+                            <constraint firstAttribute="bottom" secondItem="lEU-Rk-bxn" secondAttribute="bottom" constant="5" id="Emf-8z-wJg"/>
+                            <constraint firstAttribute="width" constant="100" id="Gw8-Q9-fK2"/>
+                            <constraint firstAttribute="trailing" secondItem="ag0-vC-loa" secondAttribute="trailing" constant="7.5" id="MSk-6D-m7V"/>
+                            <constraint firstItem="lEU-Rk-bxn" firstAttribute="top" secondItem="Quw-eT-1Y0" secondAttribute="top" constant="5" id="Rpz-Rh-9Ez"/>
+                            <constraint firstItem="ag0-vC-loa" firstAttribute="top" secondItem="Quw-eT-1Y0" secondAttribute="top" constant="5" id="WxH-zI-jp0"/>
+                            <constraint firstAttribute="bottom" secondItem="ag0-vC-loa" secondAttribute="bottom" constant="5" id="bl0-TD-V55"/>
+                            <constraint firstAttribute="height" constant="50" id="dQn-ZP-eI8"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fantastik, Çizgi film" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7B-P6-ELM">
@@ -75,26 +72,24 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                <color key="backgroundColor" systemColor="systemGray5Color"/>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Quw-eT-1Y0" secondAttribute="trailing" constant="8" id="3lG-q0-zDB"/>
                     <constraint firstItem="cSd-BM-cIO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="134" id="8Ke-xC-fbw"/>
                     <constraint firstItem="ufs-1A-hQM" firstAttribute="top" secondItem="Pf8-jA-hAb" secondAttribute="top" id="AXl-ih-b98"/>
                     <constraint firstItem="ufs-1A-hQM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="E5i-bb-epN"/>
+                    <constraint firstItem="Quw-eT-1Y0" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="EdI-87-2hn"/>
                     <constraint firstAttribute="bottom" secondItem="Pf8-jA-hAb" secondAttribute="bottom" constant="16" id="GLD-1V-QzI"/>
                     <constraint firstAttribute="bottom" secondItem="O7B-P6-ELM" secondAttribute="bottom" constant="103" id="Gya-nx-Far"/>
                     <constraint firstItem="Pf8-jA-hAb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Jh1-aS-yVf"/>
-                    <constraint firstItem="Quw-eT-1Y0" firstAttribute="leading" secondItem="cSd-BM-cIO" secondAttribute="trailing" constant="43.5" id="Syx-4R-ihf"/>
                     <constraint firstItem="cSd-BM-cIO" firstAttribute="leading" secondItem="Pf8-jA-hAb" secondAttribute="trailing" constant="16" id="Xys-Cb-4d7"/>
-                    <constraint firstAttribute="bottom" secondItem="Quw-eT-1Y0" secondAttribute="bottom" constant="45" id="f8l-BH-PFe"/>
                     <constraint firstItem="ufs-1A-hQM" firstAttribute="leading" secondItem="Pf8-jA-hAb" secondAttribute="trailing" constant="16" id="fHu-4c-Jxu"/>
                     <constraint firstAttribute="bottom" secondItem="cSd-BM-cIO" secondAttribute="bottom" constant="45.5" id="hgA-En-vRT"/>
                     <constraint firstAttribute="trailing" secondItem="O7B-P6-ELM" secondAttribute="trailing" constant="20" symbolic="YES" id="hr3-aM-7Q0"/>
                     <constraint firstAttribute="trailing" secondItem="ufs-1A-hQM" secondAttribute="trailing" constant="20" symbolic="YES" id="jXZ-fc-W9q"/>
-                    <constraint firstItem="Quw-eT-1Y0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="105" id="lo2-vL-YgC"/>
                     <constraint firstItem="Pf8-jA-hAb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="qaG-UY-5gZ"/>
                     <constraint firstItem="O7B-P6-ELM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="79" id="uCw-n6-ZBv"/>
                     <constraint firstItem="O7B-P6-ELM" firstAttribute="leading" secondItem="Pf8-jA-hAb" secondAttribute="trailing" constant="16" id="y3p-Vc-KAS"/>
-                    <constraint firstAttribute="trailing" secondItem="Quw-eT-1Y0" secondAttribute="trailing" constant="34" id="yx8-zE-Ooq"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -112,11 +107,11 @@
     <resources>
         <image name="joker" width="187" height="269"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

@@ -6,16 +6,13 @@
 //
 
 import Foundation
-import Alamofire
 
 class Service  {
-    
     
     func downloadMovie(url : URL, completion: @escaping (MoviesDataModel?) -> () ) {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                
                 print(error.localizedDescription)
                 completion(nil)
             }else if let data = data{
@@ -25,21 +22,15 @@ class Service  {
                     completion(movieList)
                 } catch let err {
                     print(err)
-                    
                 }
-    
             }
         }.resume()
-  
     }
-
+    
     func downloadSeries(url : URL, completion: @escaping (SeriesDataModel?) -> () ) {
-        
-        
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                
                 print(error.localizedDescription)
                 completion(nil)
             }else if let data = data{
@@ -52,17 +43,12 @@ class Service  {
                 }
             }
         }.resume()
-
-        
     }
     
-    
-    
     func downloadGenre(url : URL, completion: @escaping (GenreMoviesModel?) -> () ) {
-         
+        
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                
                 print(error.localizedDescription)
                 completion(nil)
             }else if let data = data{
@@ -74,11 +60,7 @@ class Service  {
                     print(err)
                     
                 }
-                
-                
-                
             }
         }.resume()
-    
-}
+    }
 }
